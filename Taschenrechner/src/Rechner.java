@@ -57,6 +57,7 @@ public class Rechner {
 						* (Math.pow(10.0, -String.valueOf(nakom).length()));
 				oper = eingabe;
 				status = 3;
+				nakom=0;
 				break;
 			case '=':
 				zahl1 += nakom
@@ -120,6 +121,7 @@ public class Rechner {
 				
 				status = 3;
 				oper = eingabe;
+				nakom=0;
 				break;
 			case '=':
 				zahl2 += nakom

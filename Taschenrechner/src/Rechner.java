@@ -8,7 +8,7 @@ public class Rechner {
 	private int nakom = 0;
 
 
-	public void reset() {							// Zurücksetzten der Variablen
+	public void reset() {							// Zurï¿½cksetzten der Variablen
 		status = 1;
 		zahl1 = 0;
 		zahl2 = 0;
@@ -18,7 +18,7 @@ public class Rechner {
 	}
 
 	public void eingeben(char eingabe) {												// Anlegen der Methode eingeben
-		switch (status) {																// Prüfe Status
+		switch (status) {																// Prï¿½fe Status
 		case 1:																			// Fall 1
 			switch (eingabe) {
 			case 'c':																	// Fall C im Fall 1
@@ -53,18 +53,16 @@ public class Rechner {
 			case '*':																	// Fall * im Fall 2
 			case '-':																	// Fall - im Fall 2
 			case '/':																	// Fall / im Fall 2
-				zahl1 += nakom															// Addiere zur Zahl 1 die Nachkommastelle
-						* (Math.pow(10.0, -String.valueOf(nakom).length()));			// multipliziere die Nachkommastelle mit 10 hoch - Länge Nachkommastelle
+				zahl1 = this.komma(zahl1, nakom);			
 				oper = eingabe;														
 				status = 3;																// Wechsle in Zustand 3
 				nakom=0;
 				break;
 			case '=':																	// Fall = im Fall 3
-				zahl1 += nakom
-						* (Math.pow(10.0, -String.valueOf(nakom).length()));			// Addiere zur Zahl 1 die Nachkommastelle
-				System.out.println(zahl1);												// multipliziere die Nachkommastelle mit 10 hoch - Länge Nachkommastelle
+				zahl1 = this.komma(zahl1,nakom);
+				System.out.println(zahl1);												// multipliziere die Nachkommastelle mit 10 hoch - Lï¿½nge Nachkommastelle
 				status = 5;																// wechsle in Zustand 5
-				nakom = 0;																// Setzte Variable nakom auf 0 zurück
+				nakom = 0;																// Setzte Variable nakom auf 0 zurï¿½ck
 				break;
 			default:
 				if (Character.isDigit(eingabe)) {										// Wenn eingegebenes Zeichen eine Zahl ist	
@@ -75,7 +73,7 @@ public class Rechner {
 		case 3:																			// Fall 3
 			switch (eingabe) {
 			case 'c':																	// Fall C im Fall 3
-				this.reset();															// hiermit wird die eigene Methode Reset ausgeführt
+				this.reset();															// hiermit wird die eigene Methode Reset ausgefï¿½hrt
 				break;
 			case '+':																	// Fall + im Fall 3
 			case '*':																	// Fall * im Fall 3
@@ -95,6 +93,7 @@ public class Rechner {
 				zahl1 = this.rechnen(zahl1, zahl2, oper);								// hier wird das Rechnen mit Zahl 1 u Zahl2 u Operand
 				System.out.println(zahl1);												// mit der Methode rechnen benutzt 
 				oper = 0;																// der Operand wird auf 0 gesetzt
+				zahl2=0;
 				status = 5;																// Wechsle in Status 5
 				break;
 			default:
@@ -112,9 +111,7 @@ public class Rechner {
 			case '*':																	// Fall * im Fall 3
 			case '-':																	// Fall - im Fall 3
 			case '/':																	// Fall / im Fall 3
-				zahl2 += nakom															// Addiere zur Zahl 2 die Nachkommastelle
-				* (Math.pow(10.0, -String.valueOf(nakom).length()));					// multipliziere die Nachkommastelle mit 10 hoch - Länge Nachkommastelle
-																						
+				zahl2 = this.komma(zahl2, nakom);								
 					zahl1 = this.rechnen(zahl1, zahl2, oper);							// hier wird das Rechnen mit Zahl 1 u Zahl2 u Operand
 					zahl2=0;															// mit der Methode rechnen benutzt, Zahl 2 wird auf 0 gesetzt
 				
@@ -124,13 +121,13 @@ public class Rechner {
 				nakom=0;																// nakom wird auf 0 gesetzt
 				break;
 			case '=':																	// Fall = im Zustand 3 
-				zahl2 += nakom															// Addiere zur Zahl 2 die Nachkommastelle
-						* (Math.pow(10.0, -String.valueOf(nakom).length()));			// multipliziere die Nachkommastelle mit 10 hoch - Länge Nachkommastelle
+				zahl2 = this.komma(zahl2, nakom);
 				zahl1 = this.rechnen(zahl1, zahl2, oper);								// Rechne mit Zahl 1, Zahl2 und Operand
 				System.out.println(zahl1);												// Ausgabe der Zahl 1
 				status = 5;																// Wechsle in Zustand 5
 				oper = 0;																// setze Operand auf 0
 				nakom = 0;																// setze Nachkommastelle auf 0
+				zahl2=0;
 				break;
 			default:
 				if (Character.isDigit(eingabe)) {										// Wenn eingegebenes Zeichen eine Zahl ist
@@ -141,7 +138,14 @@ public class Rechner {
 		case 5:																			// Fall 5
 			switch (eingabe) {
 			case 'c':																	// Fall c im Fall 5
-				this.reset();															// ausführen der Methode "reset"
+				this.reset();															// ausfï¿½hren der Methode "reset"
+				break;
+			case '+':																	// Fall + im Fall 1
+			case '*':																	// Fall * im Fall 1
+			case '-':																	// Fall - im Fall 1
+			case '/':																	// Fall / im Fall 1
+				status = 3;																// Wechsle in Status 3
+				oper = eingabe;				
 				break;
 			case '=':																	// Fall "=" im Fall 5
 				System.out.println(zahl1);												// gib Zahl 1 aus
@@ -173,6 +177,17 @@ public class Rechner {
 			break;
 		}
 
-		return ergebnis;																// gib Ergebnis zurück
-	}	
+		return ergebnis;																// gib Ergebnis zurï¿½ck
+	}
+	public double komma(double vorkomm,double nakomm){
+		double ergebnis;
+		
+		while(true){
+			nakomm/=10;
+			if (nakomm<10){
+				break;
+			}
+		}
+		ergebnis=vorkomm+nakomm;		
+		return ergebnis;}
 }

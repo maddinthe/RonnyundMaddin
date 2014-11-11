@@ -18,11 +18,10 @@ public class tester {
 	}
 	public double komma(double vorkomm,double nakomm){
 		double ergebnis;
-		double rest=nakomm;
+		
 		while(true){
-			rest/=10;
 			nakomm/=10;
-			if (rest<10){
+			if (nakomm<10){
 				nakomm/=10;
 				break;
 			}

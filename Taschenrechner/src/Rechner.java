@@ -1,14 +1,14 @@
 
 
 public class Rechner {
-	private int status = 1;
+	private int status = 1;							// Initialisieren der Variablen
 	private double zahl1 = 0;
 	private double zahl2 = 0;
 	private char oper = 0;
 	private int nakom = 0;
 
 
-	public void reset() {
+	public void reset() {							// Zurücksetzten der Variablen
 		status = 1;
 		zahl1 = 0;
 		zahl2 = 0;

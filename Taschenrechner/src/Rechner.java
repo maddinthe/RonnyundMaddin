@@ -6,6 +6,7 @@ public class Rechner {
 	private double zahl2 = 0;
 	private char oper = 0;
 	private int nakom = 0;
+	private int nakomZaehl=0;
 
 
 	public void reset() {							// Zur�cksetzten der Variablen
@@ -14,7 +15,7 @@ public class Rechner {
 		zahl2 = 0;
 		oper = 0;
 		nakom = 0;
-		
+		nakomZaehl=0;
 	}
 
 	public void eingeben(char eingabe) {												// Anlegen der Methode eingeben
@@ -53,20 +54,23 @@ public class Rechner {
 			case '*':																	// Fall * im Fall 2
 			case '-':																	// Fall - im Fall 2
 			case '/':																	// Fall / im Fall 2
-				zahl1 = this.komma(zahl1, nakom);			
+				zahl1 = this.komma(zahl1, nakom,nakomZaehl);			
 				oper = eingabe;														
 				status = 3;																// Wechsle in Zustand 3
 				nakom=0;
+				nakomZaehl=0;
 				break;
 			case '=':																	// Fall = im Fall 3
-				zahl1 = this.komma(zahl1,nakom);
+				zahl1 = this.komma(zahl1,nakom,nakomZaehl);
 				System.out.println(zahl1);												// multipliziere die Nachkommastelle mit 10 hoch - L�nge Nachkommastelle
 				status = 5;																// wechsle in Zustand 5
 				nakom = 0;																// Setzte Variable nakom auf 0 zur�ck
+				nakomZaehl=0;
 				break;
 			default:
 				if (Character.isDigit(eingabe)) {										// Wenn eingegebenes Zeichen eine Zahl ist	
 					nakom = (nakom * 10) + Character.getNumericValue(eingabe);			// so multipliziere die Zahl nakom mit 10 und wandle den 
+					nakomZaehl+=1;
 				}																		// eingelesenen ASCII Wert in einen Integer um und speichere
 			}																		 	// diesen in nakom
 			break;
@@ -111,7 +115,7 @@ public class Rechner {
 			case '*':																	// Fall * im Fall 3
 			case '-':																	// Fall - im Fall 3
 			case '/':																	// Fall / im Fall 3
-				zahl2 = this.komma(zahl2, nakom);								
+				zahl2 = this.komma(zahl2, nakom,nakomZaehl);								
 					zahl1 = this.rechnen(zahl1, zahl2, oper);							// hier wird das Rechnen mit Zahl 1 u Zahl2 u Operand
 					zahl2=0;															// mit der Methode rechnen benutzt, Zahl 2 wird auf 0 gesetzt
 				
@@ -119,19 +123,22 @@ public class Rechner {
 				status = 3;																// Wechsle in Zustand 3
 				oper = eingabe;															// Der Operand wird auf Variable eingabe gesetzt
 				nakom=0;																// nakom wird auf 0 gesetzt
+				nakomZaehl=0;
 				break;
 			case '=':																	// Fall = im Zustand 3 
-				zahl2 = this.komma(zahl2, nakom);
+				zahl2 = this.komma(zahl2, nakom,nakomZaehl);
 				zahl1 = this.rechnen(zahl1, zahl2, oper);								// Rechne mit Zahl 1, Zahl2 und Operand
 				System.out.println(zahl1);												// Ausgabe der Zahl 1
 				status = 5;																// Wechsle in Zustand 5
 				oper = 0;																// setze Operand auf 0
 				nakom = 0;																// setze Nachkommastelle auf 0
+				nakomZaehl=0;
 				zahl2=0;
 				break;
 			default:
 				if (Character.isDigit(eingabe)) {										// Wenn eingegebenes Zeichen eine Zahl ist
 					nakom = (nakom * 10) + Character.getNumericValue(eingabe);			// so multipliziere die nakom mit 10 und wandle den
+					nakomZaehl+=1;
 				}																		// eingelesenen ASCII Wert in einen Integer um und speichere die Summe in nakom
 			}
 			break;
@@ -179,14 +186,12 @@ public class Rechner {
 
 		return ergebnis;																// gib Ergebnis zur�ck
 	}
-	public double komma(double vorkomm,double nakomm){
+	public double komma(double vorkomm,double nakomm,int zaehler){
 		double ergebnis;
 		
-		while(true){
+		for(int i=zaehler;i>0;i--){
 			nakomm/=10;
-			if (nakomm<1){
-				break;
-			}
+		
 		}
 		ergebnis=vorkomm+nakomm;		
 		return ergebnis;}

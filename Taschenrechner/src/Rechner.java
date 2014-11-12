@@ -184,7 +184,7 @@ public class Rechner {
 		
 		while(true){
 			nakomm/=10;
-			if (nakomm<10){
+			if (nakomm<1){
 				break;
 			}
 		}

@@ -117,9 +117,7 @@ public class Rechner {
 			case '/':																	// Fall / im Fall 3
 				zahl2 = this.komma(zahl2, nakom,nakomZaehl);								
 					zahl1 = this.rechnen(zahl1, zahl2, oper);							// hier wird das Rechnen mit Zahl 1 u Zahl2 u Operand
-					zahl2=0;															// mit der Methode rechnen benutzt, Zahl 2 wird auf 0 gesetzt
-				
-				
+					zahl2=0;															// mit der Methode rechnen benutzt, Zahl 2 wird auf 0 gesetzt			
 				status = 3;																// Wechsle in Zustand 3
 				oper = eingabe;															// Der Operand wird auf Variable eingabe gesetzt
 				nakom=0;																// nakom wird auf 0 gesetzt
@@ -186,13 +184,7 @@ public class Rechner {
 
 		return ergebnis;																// gib Ergebnis zur�ck
 	}
-	public double komma(double vorkomm,double nakomm,int zaehler){
-		double ergebnis;
-		
-		for(int i=zaehler;i>0;i--){
-			nakomm/=10;
-		
-		}
-		ergebnis=vorkomm+nakomm;		
-		return ergebnis;}
+	public double komma(double vorkomm,double nakomm,int zaehler){	
+		for(int i=zaehler;i>0;i--) nakomm/=10;	
+		return vorkomm+nakomm;}
 }

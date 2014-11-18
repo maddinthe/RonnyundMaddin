@@ -17,6 +17,8 @@ public class Eingabe {
 				System.out.println("Ende");							// Ausgabe "Ende"
 				break;
 			}
+			if (eingabe.contains("c")==false)
+				d.eingabe(eingabe);
 			for (int i = 0; i < eingabe.length(); i++) {			// F�r jedes Zeichen aus dem String eingabe, f�hre rechner eingabe aus
 				r.eingeben(eingabe.charAt(i));
 			}

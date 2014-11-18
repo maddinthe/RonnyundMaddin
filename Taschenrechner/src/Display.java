@@ -1,6 +1,6 @@
 
 public class Display {
-	String[] eins={	"        ",
+	private String[] eins={	"        ",
 					"        ",
 					"   /\\   ",
 					"  |  |  ",
@@ -12,7 +12,7 @@ public class Display {
 					"   \\/   ",
 					"        "};
 	
-	String[] zwei={	"    ____     ",
+	private String[] zwei={	"    ____     ",
 					"   /    \\    ",
 					"   \\____/\\   ",
 					"       |  |  ",
@@ -23,7 +23,7 @@ public class Display {
 					" |  |___     ",
 					"  \\/    \\    ",
 					"   \\____/    "};
-	String[] drei={	"   ____     ",
+	private String[] drei={	"   ____     ",
 					"  /    \\    ",
 					"  \\____/\\   ",
 					"      |  |  ",
@@ -34,7 +34,7 @@ public class Display {
 					"   ___|  |  ",
 					"  /    \\/   ",
 					"  \\____/    "};
-	String[] vier={	"            ",
+	private String[] vier={	"            ",
 					"            ",
 					" /\\    /\\   ",
 					"|  |  |  |  ",
@@ -45,7 +45,7 @@ public class Display {
 					"      |  |  ",
 					"       \\/   ",
 					"            "};
-	String[] fuenf={"   ____     ",
+	private String[] fuenf={"   ____     ",
 					"  /    \\    ",
 					" /\\____/    ",
 					"|  |        ",
@@ -56,7 +56,7 @@ public class Display {
 					"   ___|  |  ",
 					"  /    \\/   ",
 					"  \\____/    "};
-	String[] sechs={"   ____     ",
+	private String[] sechs={"   ____     ",
 					"  /    \\    ",
 					" /\\____/    ",
 					"|  |        ",
@@ -67,7 +67,7 @@ public class Display {
 					"|  |__|  |  ",
 					" \\/    \\/   ",
 					"  \\____/    "};
-	String[] sieben={	"   ____     ",
+	private String[] sieben={	"   ____     ",
 						"  /    \\    ",
 						"  \\____/\\   ",
 						"      |  |  ",
@@ -78,7 +78,7 @@ public class Display {
 						"      |  |  ",
 						"       \\/   ",
 						"            "};
-	String[] acht={	"   ____     ",
+	private String[] acht={	"   ____     ",
 					"  /    \\    ",
 					" /\\____/\\   ",
 					"|  |  |  |  ",
@@ -89,7 +89,7 @@ public class Display {
 					"|  |__|  |  ",
 					" \\/    \\/   ",
 					"  \\____/    "};
-	String[] neun={	"   ____     ",
+	private String[] neun={	"   ____     ",
 					"  /    \\    ",
 					" /\\____/\\   ",
 					"|  |  |  |  ",
@@ -100,7 +100,7 @@ public class Display {
 					"   ___|  |  ",
 					"  /    \\/   ",
 					"  \\____/    "};
-	String[] zero={	"   ____     ",
+	private String[] zero={	"   ____     ",
 					"  /    \\    ",
 					" /\\____/\\   ",
 					"|  |  |  |  ",
@@ -111,7 +111,7 @@ public class Display {
 					"|  |__|  |  ",
 					" \\/    \\/   ",
 					"  \\____/    "};
-	String[] punkt={"   ",
+	private String[] punkt={"   ",
 					"   ",
 					"   ",
 					"   ",
@@ -122,7 +122,7 @@ public class Display {
 					"   ",
 					"## ",
 					"## "};
-	String[] plus={	"          ",
+	private String[] plus={	"          ",
 					"          ",
 					"          ",
 					"    #     ",
@@ -133,7 +133,7 @@ public class Display {
 					"          ",
 					"          ",
 					"          "};
-	String[] minus={"          ",
+	private String[] minus={"          ",
 					"          ",
 					"          ",
 					"          ",
@@ -144,7 +144,7 @@ public class Display {
 					"          ",
 					"          ",
 					"          "};
-	String[] mal={	"       ",
+	private String[] mal={	"       ",
 					"       ",
 					"       ",
 					" #   # ",
@@ -155,7 +155,7 @@ public class Display {
 					"       ",
 					"       ",
 					"       "};
-	String[] geteilt={	"      ",
+	private String[] geteilt={	"      ",
 						"      ",
 						"      ",
 						"  ##  ",
@@ -166,7 +166,7 @@ public class Display {
 						"      ",
 						"      ",
 						"      "};
-	String[] gleich={	"         ",
+	private String[] gleich={	"         ",
 						"         ",
 						"         ",
 						"         ",
@@ -178,6 +178,19 @@ public class Display {
 						"         ",
 						"         "};
 	
+	
+	public String ausgabe="";
+	public void eingabe(String str){
+		ausgabe+=str;
+		strAnzeigen(ausgabe);
+	}	
+	public void anzeigen(String str){
+			ausgabe+=str;
+			for(int i=0;i<21;i++)
+				System.out.println();
+			strAnzeigen(ausgabe);
+			ausgabe=str;
+		}
 		public void strAnzeigen(String str){
 			for (int i=0;i<eins.length;i++){
 				for (int j=0;j<str.length();j++){

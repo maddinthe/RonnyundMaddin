@@ -16,6 +16,7 @@ public class Rechner {
 		oper = 0;
 		nakom = 0;
 		nakomZaehl=0;
+		d.ausgabe="";
 	}
 
 	public void eingeben(char eingabe) {												// Anlegen der Methode eingeben
@@ -37,8 +38,8 @@ public class Rechner {
 				status = 2;																// Wechsle in Status 2
 				break;
 			case '=':
-				d.strAnzeigen(String.valueOf(zahl1));
-				System.out.println(zahl1);												// Gebe Zahl 2 aus
+				d.anzeigen(String.valueOf(zahl1));
+				//System.out.println(zahl1);												// Gebe Zahl 2 aus
 				break;
 			default:
 				if (Character.isDigit(eingabe)) {										// Wenn eingegebenes Zeichen eine Zahl ist
@@ -62,9 +63,9 @@ public class Rechner {
 				nakomZaehl=0;
 				break;
 			case '=':																	// Fall = im Fall 3
-				d.strAnzeigen(String.valueOf(zahl1));
+				d.anzeigen(String.valueOf(zahl1));
 				zahl1 = this.komma(zahl1,nakom,nakomZaehl);
-				System.out.println(zahl1);												// multipliziere die Nachkommastelle mit 10 hoch - L�nge Nachkommastelle
+				//System.out.println(zahl1);												// multipliziere die Nachkommastelle mit 10 hoch - L�nge Nachkommastelle
 				status = 5;																// wechsle in Zustand 5
 				nakom = 0;																// Setzte Variable nakom auf 0 zur�ck
 				nakomZaehl=0;
@@ -97,8 +98,8 @@ public class Rechner {
 				break;
 			case '=':
 				zahl1 = this.rechnen(zahl1, zahl2, oper);								// hier wird das Rechnen mit Zahl 1 u Zahl2 u Operand
-				d.strAnzeigen(String.valueOf(zahl1));
-				System.out.println(zahl1);												// mit der Methode rechnen benutzt 
+				d.anzeigen(String.valueOf(zahl1));
+				//System.out.println(zahl1);												// mit der Methode rechnen benutzt 
 				oper = 0;																// der Operand wird auf 0 gesetzt
 				zahl2=0;
 				status = 5;																// Wechsle in Status 5
@@ -129,8 +130,8 @@ public class Rechner {
 			case '=':																	// Fall = im Zustand 3 
 				zahl2 = this.komma(zahl2, nakom,nakomZaehl);
 				zahl1 = this.rechnen(zahl1, zahl2, oper);								// Rechne mit Zahl 1, Zahl2 und Operand
-				d.strAnzeigen(String.valueOf(zahl1));
-				System.out.println(zahl1);												// Ausgabe der Zahl 1
+				d.anzeigen(String.valueOf(zahl1));
+				//System.out.println(zahl1);												// Ausgabe der Zahl 1
 				status = 5;																// Wechsle in Zustand 5
 				oper = 0;																// setze Operand auf 0
 				nakom = 0;																// setze Nachkommastelle auf 0
@@ -157,8 +158,8 @@ public class Rechner {
 				oper = eingabe;				
 				break;
 			case '=':																	// Fall "=" im Fall 5
-				d.strAnzeigen(String.valueOf(zahl1));
-				System.out.println(zahl1);												// gib Zahl 1 aus
+				d.anzeigen(String.valueOf(zahl1));
+				//System.out.println(zahl1);												// gib Zahl 1 aus
 			default:
 				if (Character.isDigit(eingabe)) {										// Wenn eingegebenes Zeichen eine Zahl ist
 					zahl1 = Character.getNumericValue(eingabe);							// Umwandeln des eingelesenen ASCII Wertes in einen Integer 

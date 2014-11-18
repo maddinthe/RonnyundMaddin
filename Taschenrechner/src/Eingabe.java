@@ -9,7 +9,7 @@ public class Eingabe {
 		Scanner s = new Scanner(System.in);	                        // Anlegen des Objekts Scanner
 		Display d = new Display();
 		
-		d.strAnzeigen("122343");
+		d.strAnzeigen("1*2+3/4-5=6");
 		while (true) {												// Durchlaufe Schleife
 			String eingabe = s.nextLine();							// Abfrage der n�chsten Zeile in der Konsole und speichern in Eingabe
 			if (eingabe.equalsIgnoreCase("ende")) {					// Wenn eingabe "ende" erfolgt wird die Schleife Abgebrochen (schreibweise egal)

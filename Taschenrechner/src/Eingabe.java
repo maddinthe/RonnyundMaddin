@@ -8,8 +8,9 @@ public class Eingabe {
 		Rechner r = new Rechner();									// Anlegen des Objekts Rechner
 		Scanner s = new Scanner(System.in);	                        // Anlegen des Objekts Scanner
 		Display d = new Display();
+		r.d=d;
+		//d.strAnzeigen("22/14*3=789");
 		
-		d.strAnzeigen("1*2+3/4-5=6");
 		while (true) {												// Durchlaufe Schleife
 			String eingabe = s.nextLine();							// Abfrage der n�chsten Zeile in der Konsole und speichern in Eingabe
 			if (eingabe.equalsIgnoreCase("ende")) {					// Wenn eingabe "ende" erfolgt wird die Schleife Abgebrochen (schreibweise egal)

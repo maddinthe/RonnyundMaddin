@@ -9,6 +9,7 @@ public class Eingabe {
 		Scanner s = new Scanner(System.in);	                        // Anlegen des Objekts Scanner
 		Display d = new Display();
 		r.d=d;
+		d.bla();
 		//d.strAnzeigen("22/14*3=789");
 		
 		while (true) {												// Durchlaufe Schleife

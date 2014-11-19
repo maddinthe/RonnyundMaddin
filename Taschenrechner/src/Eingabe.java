@@ -8,13 +8,10 @@ public class Eingabe {
 		Rechner r = new Rechner();									// Anlegen des Objekts Rechner
 		Scanner s = new Scanner(System.in);	                        // Anlegen des Objekts Scanner
 		Display d = new Display();
-		r.d=d;
-		d.bla();
-		//d.strAnzeigen("22/14*3=789");
-		
+		r.d=d;		
 		System.out.println("Woilkommen in Maddins rechner:");
-		System.out.println("Welchen Zeichen-Satz möchten sie nutzen?");
-		System.out.println("1 für Groß und 2 für Klein");
+		System.out.println("Welchen Zeichen-Satz mï¿½chten sie nutzen?");
+		System.out.println("1 fï¿½r Groï¿½ und 2 fï¿½r Klein");
 		d.setBuchstabenSatz(s.nextInt()-1);
 		
 		while (true) {												// Durchlaufe Schleife

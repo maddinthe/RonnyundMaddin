@@ -63,8 +63,8 @@ public class Rechner {
 				nakomZaehl=0;
 				break;
 			case '=':																	// Fall = im Fall 3
-				d.anzeigen(String.valueOf(zahl1));
 				zahl1 = this.komma(zahl1,nakom,nakomZaehl);
+				d.anzeigen(String.valueOf(zahl1));
 				//System.out.println(zahl1);												// multipliziere die Nachkommastelle mit 10 hoch - L�nge Nachkommastelle
 				status = 5;																// wechsle in Zustand 5
 				nakom = 0;																// Setzte Variable nakom auf 0 zur�ck

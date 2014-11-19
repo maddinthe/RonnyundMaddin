@@ -1,6 +1,6 @@
 
 public class Display {
-	int satz=0;
+	private int satz=0;
 	public void setBuchstabenSatz(int satz){
 		this.satz = satz;
 	}
@@ -205,7 +205,7 @@ public class Display {
 								"|_  ",
 								"|_| ",};
 	private String[] kSieben={	" _  ",
-								"  |  ",
+								"  | ",
 								"  | ",};
 	private String[] kAcht={	" _  ",
 								"|_| ",

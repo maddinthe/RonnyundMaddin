@@ -216,9 +216,6 @@ public class Display {
 								
 				}
 		};
-
-	
-	
 	public String ausgabe="";
 	public void eingabe(String str){
 		ausgabe+=str;

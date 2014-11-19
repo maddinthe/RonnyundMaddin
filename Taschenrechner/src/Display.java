@@ -1,5 +1,10 @@
 
 public class Display {
+	int satz=0;
+	public void setBuchstabenSatz(int satz){
+		this.satz = satz;
+	}
+	
 	private String[] eins={	"        ",
 					"        ",
 					"   /\\   ",
@@ -178,7 +183,56 @@ public class Display {
 						"         ",
 						"         "};
 	
-	private String[][][] array=new String[1][16][];
+	private String[] kZero={" _  ",
+							"| | ",
+							"|_| "};
+	private String[] kEins={	"  ",
+								"| ",
+								"| "};
+	private String[] kZwei={	" _  ",
+								" _| ",
+								"|_  "};
+	private String[] kDrei={	" _  ",
+								" _| ",
+								" _| "};
+	private String[] kVier={	"    ",
+								"|_| ",
+								"  | "};
+	private String[] kFuenf={	" _  ",
+								"|_  ",
+								" _| ",};
+	private String[] kSechs={	" _  ",
+								"|_  ",
+								"|_| ",};
+	private String[] kSieben={	" _  ",
+								"  |  ",
+								"  | ",};
+	private String[] kAcht={	" _  ",
+								"|_| ",
+								"|_| ",};
+	private String[] kNeun={	" _  ",
+								"|_| ",
+								" _| ",};
+	private String[] kPunkt={	"  ",
+								"  ",
+								"o "};
+	private String[] kPlus={	"     ",
+								" _|_ ",
+								"  |  "};
+	private String[] kMinus={	"    ",
+								" __ ",
+								"    "};
+	private String[] kMal={		"   ",
+								" o ",
+								"   "};
+	private String[] kGeteilt={	"   ",
+								" o ",
+								" o "};
+	private String[] kGleich={	"    ",
+								"=== ",
+								"=== "};
+	
+	private String[][][] array=new String[2][16][];
 	public void bla(){
 		
 		array[0][0]=zero;
@@ -196,7 +250,23 @@ public class Display {
 		array[0][12]=minus;
 		array[0][13]=mal;
 		array[0][14]=geteilt;
-		array[0][15]=gleich;}
+		array[0][15]=gleich;
+		array[1][0]=kZero;
+		array[1][1]=kEins;
+		array[1][2]=kZwei;
+		array[1][3]=kDrei;
+		array[1][4]=kVier;
+		array[1][5]=kFuenf;
+		array[1][6]=kSechs;
+		array[1][7]=kSieben;
+		array[1][8]=kAcht;
+		array[1][9]=kNeun;
+		array[1][10]=kPunkt;
+		array[1][11]=kPlus;
+		array[1][12]=kMinus;
+		array[1][13]=kMal;
+		array[1][14]=kGeteilt;
+		array[1][15]=kGleich;}
 		
 	
 	
@@ -213,7 +283,6 @@ public class Display {
 			ausgabe=str;
 		}
 		public void strAnzeigen(String str){
-			int satz=0;
 			for (int i=0;i<array[satz][0].length;i++){
 				for (int j=0;j<str.length();j++){
 					switch (str.charAt(j)){

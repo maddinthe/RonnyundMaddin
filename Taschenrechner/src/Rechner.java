@@ -44,7 +44,7 @@ public class Rechner {
 			default:
 				if (Character.isDigit(eingabe)) {										// Wenn eingegebenes Zeichen eine Zahl ist
 					zahl1 = (zahl1 * 10) + Character.getNumericValue(eingabe);			// so multipliziere die Zahl1 mit 10 und wandle den 
-				}																		// eingelesenen ASCII Wert in einen Integer um
+					}																		// eingelesenen ASCII Wert in einen Integer um
 			}
 			break;
 		case 2:																			// Fall 2

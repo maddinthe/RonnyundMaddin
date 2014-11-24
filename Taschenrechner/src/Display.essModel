@@ -1,0 +1,18 @@
+[Box: ::Default - ::Default::Display]
+X=430
+Y=40
+
+[Box: ::Default - ::Default::Eingabe]
+X=225
+Y=40
+
+[Box: ::Default - ::Default::Rechner]
+X=20
+Y=40
+
+[Diagram: ::Default]
+OffsetX=0
+OffsetY=0
+Visibility=0
+ShowAssoc=1
+

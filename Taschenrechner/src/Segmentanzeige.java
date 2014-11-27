@@ -1,6 +1,6 @@
 
 public class Segmentanzeige {
-	boolean[] anzeige=new boolean[63];
+	boolean[] anzeige=new boolean[64];
 	
 	public void an (int seg){
 		anzeige[seg]=true;

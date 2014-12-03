@@ -7,7 +7,8 @@ public class tester {
 		Segmentanzeige seg=seganst.getSeg();
 		seganst.anst(-12.34567890);
 		for (int i=0;i<64;i++){
-			System.out.println(seg.isAn(i));
+			System.out.print(seg.isAn(i));
+			System.out.println(" Element"+ i);
 		}
 		
 	}

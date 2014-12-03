@@ -16,15 +16,16 @@ public class SegmentAnst {
 		else zahl=zahl.substring(0,8);
 		System.out.println(zahl);
 		seg.clearAll();
-		for (int i=0,j=0; i<zahl.length();i++){
+		for (int i=0,j=0,l=0; i<zahl.length();i++){
 			switch (zahl.charAt(i)){
 			case '.':
 			case '-':
 				seg.an(j);
 				break;
 			default:
-				for (int k=0;k<ansteuer[Character.valueOf(zahl.charAt(i))].length;k++){
-					seg.an(j+(ansteuer[Character.valueOf(zahl.charAt(i))][k]));
+				l=Character.getNumericValue(zahl.charAt(i));
+				for (int k=0;k<ansteuer[l].length;k++){
+					seg.an(j+(ansteuer[l][k]));
 				}
 				j+=8;
 				
